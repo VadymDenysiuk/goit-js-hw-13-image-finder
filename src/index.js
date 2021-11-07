@@ -30,9 +30,9 @@ function onSearch(e) {
       refs.loadMore.classList.add('is-hidden')
       return;
     }
-    refs.loadMore.classList.remove('is-hidden')
     cleanContainer();
-    appendImagesMarkup(hits)
+    appendImagesMarkup(hits);
+    refs.loadMore.classList.remove('is-hidden')
   }).catch((error) => { console.log(error) })
 }
 
@@ -40,9 +40,6 @@ function onLoadMore() {
   apiService.fetchArticles().then( ({hits}) => {
     appendImagesMarkup(hits);
     addScrollIntoViev();
-    /* if (!hits.length) {
-      refs.loadMore.classList.add('is-hidden');
-    } */
   });
 }
 
