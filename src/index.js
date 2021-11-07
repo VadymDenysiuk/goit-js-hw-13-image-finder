@@ -40,9 +40,9 @@ function onLoadMore() {
   apiService.fetchArticles().then( ({hits}) => {
     appendImagesMarkup(hits);
     addScrollIntoViev();
-    if (!hits.length) {
+    /* if (!hits.length) {
       refs.loadMore.classList.add('is-hidden');
-    }
+    } */
   });
 }
 
